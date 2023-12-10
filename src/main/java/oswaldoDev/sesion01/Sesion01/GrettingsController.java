@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicLong;
 @RequestMapping(value = "greetings")
 public class GrettingsController {
     private AtomicLong counter = new AtomicLong();
-    private static final String template = "Hello %s";
+    private static final String template = "Hola %s";
     @GetMapping
     public Greetings greetings(@RequestParam(value = "name",defaultValue = "World") String name) {
         return new Greetings(counter.incrementAndGet(),String.format(template,name));
